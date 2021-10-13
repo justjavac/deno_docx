@@ -1,0 +1,156 @@
+:root {
+  --font-size: 16px;
+  --header-height: 60px;
+  --header-font-size: 120%;
+  --max-width: 1100px;
+  --border-color: #eaecef;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  border-bottom: 1px solid var(--border-color);
+  background-color: white;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  max-width: var(--max-width);
+  height: 100%;
+  margin: 0 auto;
+}
+
+header ul li {
+  margin: 0 10px;
+  list-style: none;
+  font-weight: 600;
+}
+
+header ul li:first {
+  margin-left: 0;
+}
+
+header ul li:last-child {
+  margin-right: 0;
+}
+
+header ul li h1 {
+  display: flex;
+  align-items: center;
+  font-size: calc(var(--font-size) + 4px);
+}
+
+header ul li h1 a {
+  display: flex;
+  align-items: center;
+}
+
+header ul li h1 img {
+  height: calc(var(--header-height) - 20px);
+  vertical-align: middle;
+  margin: 0 0.5rem;
+}
+
+header ul li.space {
+  flex-grow: 1;
+}
+
+aside {
+  width: 25%;
+  border-right: 1px solid var(--border-color);
+}
+
+aside nav {
+  width: 100%;
+  height: calc(100vh - 1.8em - 70px);
+  overflow: hidden;
+  overflow-y: auto;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+aside nav ul li {
+  margin-top: 8px;
+}
+
+aside nav ul li.indent {
+  padding-left: 19px;
+  margin-left: 3px;
+}
+
+aside nav ul + li.indent {
+  margin-top: 0;
+  padding-top: 18px;
+}
+
+aside nav ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 1.27;
+  font-size: 1rem;
+  color: #333;
+  user-select: none;
+}
+
+aside nav ul li a:before {
+  flex-basis: 4px;
+  flex-shrink: 0;
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin-right: 16px;
+  border-radius: 50%;
+  background-color: #999;
+  transition: background-color .15s linear;
+  content: "";
+}
+
+aside nav ul li a:hover {
+  color: #000;
+}
+
+aside nav ul li a.active {
+  color: #000;
+  font-weight: 600;
+}
+
+aside nav ul li a.active:before,
+aside nav ul li a:hover:before {
+  background-color: #111;
+}
+
+section {
+  display: flex;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.markdown-body {
+  width: 75%;
+  padding: 3rem;
+}
+
+.markdown-body pre code.hljs {
+  padding: unset;
+}
