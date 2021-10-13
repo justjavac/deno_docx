@@ -12,6 +12,11 @@ async function fetchRepo(pathname: string) {
   return fetch(url);
 }
 
+const contentTypes: Record<string, string> = {
+  css: "text/css",
+  svg: "image/svg+xml",
+};
+
 async function handleRequest(request: Request) {
   const { pathname } = new URL(request.url);
 
@@ -20,18 +25,14 @@ async function handleRequest(request: Request) {
     return fetch(favicon);
   }
 
-  if (pathname.startsWith("/public/style.css")) {
-    const file = await Deno.readFile(pathname.substr(1));
-    return new Response(file, {
-      headers: {
-        "content-type": "text/css",
-      },
-    });
-  }
-
   if (pathname.startsWith("/public/")) {
     const file = await Deno.readFile(pathname.substr(1));
-    return new Response(file);
+    const ext = pathname.substr(pathname.lastIndexOf(".") + 1);
+    return new Response(file, {
+      headers: {
+        "content-type": contentTypes[ext],
+      },
+    });
   }
 
   if (pathname.startsWith("/images/")) {
