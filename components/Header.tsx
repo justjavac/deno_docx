@@ -29,7 +29,7 @@ export default function Header() {
             target="_blank"
             rel="nofollow noopener"
           >
-            <img src="/public/github.svg" width="20" height="20"/>
+            <img src="/public/github.svg" width="20" height="20" />
           </a>
         </li>
       </ul>

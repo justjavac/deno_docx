@@ -2,7 +2,7 @@ import type { MarkedExtension } from "https://esm.sh/marked";
 
 const headingIdRegex = /(?: +|^)\{#([a-z][\w-]*)\}(?: +|$)/i;
 
-export default<MarkedExtension> {
+export default <MarkedExtension> {
   renderer: {
     heading(text, level) {
       const hasId = text.match(headingIdRegex);
@@ -15,15 +15,17 @@ export default<MarkedExtension> {
     },
     link(href, title, text) {
       const a = [
-        `<a href="${isMarkdown(href) ? href?.replace(/\.md$/, '') : href ?? "#"}"`,
-        isExternal(href) ? `target="_blank"` : '',
+        `<a href="${
+          isMarkdown(href) ? href?.replace(/\.md$/, "") : href ?? "#"
+        }"`,
+        isExternal(href) ? `target="_blank"` : "",
         title ? `title="${title}"` : "",
         `rel="friend noopener">`,
         text,
-        `</a>`
-      ]
-      return a.filter(Boolean).join(' ');
-    }
+        `</a>`,
+      ];
+      return a.filter(Boolean).join(" ");
+    },
   },
 };
 
@@ -33,5 +35,5 @@ function isExternal(url: string | null) {
 }
 
 function isMarkdown(url: string | null) {
-  return !isExternal(url) && url?.endsWith('.md');
+  return !isExternal(url) && url?.endsWith(".md");
 }
