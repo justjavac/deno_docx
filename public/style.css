@@ -81,12 +81,12 @@ aside {
 }
 
 aside nav {
+  position: sticky;
+  top: calc(var(--header-height) + 1rem);
   width: 100%;
-  height: calc(100vh - 1.8em - 70px);
+  height: calc(100vh - 2rem - var(--header-height));
   overflow: hidden;
   overflow-y: auto;
-  margin-bottom: 3rem;
-  margin-top: 3rem;
 }
 
 aside nav ul li {
