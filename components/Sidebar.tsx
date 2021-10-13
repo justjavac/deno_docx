@@ -1,5 +1,5 @@
 /** @jsx h */
-import { Fragment, h } from "https://x.lcas.dev/preact@10.5.12/mod.js";
+import { Fragment, h } from "https://esm.sh/preact";
 
 export interface Toc {
   [key: string]: {

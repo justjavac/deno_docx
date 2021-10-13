@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h } from "https://x.lcas.dev/preact@10.5.12/mod.js";
+import { h } from "https://esm.sh/preact";
 
 interface Props {
   content: string;

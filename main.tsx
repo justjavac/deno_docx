@@ -1,6 +1,6 @@
 /** @jsx h */
-import { h } from "https://x.lcas.dev/preact@10.5.12/mod.js";
-import { renderToString } from "https://x.lcas.dev/preact@10.5.12/ssr.js";
+import { h } from "https://esm.sh/preact";
+import render from "https://esm.sh/preact-render-to-string";
 
 import App from "./App.tsx";
 
@@ -44,7 +44,7 @@ async function handleRequest(request: Request) {
   const content = await (await fetchRepo(`${pathname}.md`)).text();
 
   return new Response(
-    `<!DOCTYPE html>${renderToString(<App toc={toc} content={content} />)}`,
+    `<!DOCTYPE html>${render(<App toc={toc} content={content} />)}`,
     {
       headers: {
         "content-type": "text/html; charset=utf-8",
