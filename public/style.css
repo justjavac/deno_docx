@@ -146,6 +146,7 @@ section {
 
 .markdown-body {
   width: 75%;
+  min-height: calc(100vh - var(--header-height) - 6rem);
   padding: 3rem;
 }
 
