@@ -21,6 +21,11 @@ const contentTypes: Record<string, string> = {
 async function handleRequest(request: Request) {
   const { pathname } = new URL(request.url);
 
+  // FIXME(justjavac): create a home page
+  if (pathname === "" || pathname === "/") {
+    return Response.redirect("/introduction", 302);
+  }
+
   if (pathname.startsWith("/public/")) {
     const file = await Deno.readFile(pathname.substr(1));
     const ext = pathname.substr(pathname.lastIndexOf(".") + 1);
