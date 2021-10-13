@@ -104,11 +104,9 @@ aside nav ul + li.indent {
 }
 
 aside nav ul li a {
-  position: relative;
   display: flex;
   align-items: center;
   line-height: 1.27;
-  font-size: 1rem;
   color: #333;
   user-select: none;
 }
