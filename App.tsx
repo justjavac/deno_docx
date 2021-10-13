@@ -17,6 +17,11 @@ export default function App({ toc, content }: Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>Hello from JSX</title>
+        <link
+          rel="shortcut icon"
+          href="/public/favicon.ico"
+          type="image/x-icon"
+        />
         <link rel="stylesheet" href="/public/style.css" />
         <link
           rel="stylesheet"
