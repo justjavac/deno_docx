@@ -15,17 +15,13 @@ async function fetchRepo(pathname: string) {
 const contentTypes: Record<string, string> = {
   css: "text/css",
   svg: "image/svg+xml",
+  ico: "image/x-icon",
 };
 
 async function handleRequest(request: Request) {
   const { pathname } = new URL(request.url);
 
-  if (pathname.startsWith("/favicon.ico")) {
-    const favicon = new URL("favicon.ico", import.meta.url);
-    return fetch(favicon);
-  }
-
-  if (pathname.startsWith("/public/")) {
+  if (pathname.startsWith("/public/") || pathname.startsWith("/favicon.ico")) {
     const file = await Deno.readFile(pathname.substr(1));
     const ext = pathname.substr(pathname.lastIndexOf(".") + 1);
     return new Response(file, {
