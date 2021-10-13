@@ -21,16 +21,17 @@ async function handleRequest(request: Request) {
   }
 
   if (pathname.startsWith("/public/style.css")) {
-    const style = new URL("public/style.css", import.meta.url);
-    const response = await fetch(style);
-    const headers = new Headers(response.headers);
-    headers.set("content-type", "text/css; charset=utf-8");
-    return new Response(response.body, { ...response, headers });
+    const file = await Deno.readFile(pathname.substr(1));
+    return new Response(file, {
+      headers: {
+        "content-type": "text/css",
+      },
+    });
   }
 
   if (pathname.startsWith("/public/")) {
-    const assets = new URL(pathname.substr(1), import.meta.url);
-    return fetch(assets);
+    const file = await Deno.readFile(pathname.substr(1));
+    return new Response(file);
   }
 
   if (pathname.startsWith("/images/")) {
