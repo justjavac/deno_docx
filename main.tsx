@@ -23,7 +23,7 @@ async function handleRequest(request: Request) {
 
   // FIXME(justjavac): create a home page
   if (pathname === "" || pathname === "/") {
-    return Response.redirect("/introduction", 302);
+    return Response.redirect("https://docx.deno.dev/introduction", 302);
   }
 
   if (pathname.startsWith("/public/")) {
