@@ -24,9 +24,12 @@ export default function App({ toc, content }: Props) {
         />
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.css"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"
         />
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+        <script
+          src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+        >
+        </script>
         <script>hljs.highlightAll();</script>
       </head>
       <body>
