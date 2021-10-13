@@ -28,17 +28,19 @@ export default function App({ toc, content }: Props) {
         <link rel="stylesheet" href="/public/style.css" />
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.css"
         />
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"
+          href="https://cdn.jsdelivr.net/npm/highlightjs/styles/github.css"
         />
         <script
-          src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"
+          src="https://cdn.jsdelivr.net/npm/highlightjs/highlight.pack.min.js"
         >
         </script>
-        <script>hljs.highlightAll();</script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js">
+        </script>
+        <script>hljs.highlightAll();anchors.add();</script>
       </head>
       <body>
         <Header />
