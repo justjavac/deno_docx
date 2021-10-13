@@ -34,9 +34,7 @@ export default function App({ toc, content }: Props) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/highlightjs/styles/github.css"
         />
-        <script
-          src="https://cdn.jsdelivr.net/npm/highlightjs/highlight.pack.min.js"
-        >
+        <script src="https://cdn.jsdelivr.net/npm/highlightjs/highlight.pack.min.js">
         </script>
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js">
         </script>
