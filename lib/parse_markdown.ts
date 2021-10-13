@@ -1,8 +1,9 @@
+import marked from "https://esm.sh/marked";
 import type { MarkedExtension } from "https://esm.sh/marked";
 
 const headingIdRegex = /(?: +|^)\{#([a-z][\w-]*)\}(?: +|$)/i;
 
-export default <MarkedExtension> {
+const plugin: MarkedExtension = {
   renderer: {
     heading(text, level) {
       const hasId = text.match(headingIdRegex);
@@ -29,6 +30,8 @@ export default <MarkedExtension> {
   },
 };
 
+marked.use(plugin);
+
 function isExternal(url: string | null) {
   if (url == null) return false;
   return url.includes("://");
@@ -36,4 +39,22 @@ function isExternal(url: string | null) {
 
 function isMarkdown(url: string | null) {
   return !isExternal(url) && url?.endsWith(".md");
+}
+
+export default function parseMarkdown(content: string) {
+  const matchs = content.match(/#+(.+)/);
+
+  if (matchs == null) {
+    return {
+      title: "untitled",
+      content: marked.parse(content),
+      raw: content,
+    };
+  }
+
+  return {
+    title: matchs[1].trim().replace(headingIdRegex, ""),
+    content: marked.parse(content),
+    raw: content,
+  };
 }
