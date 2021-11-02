@@ -28,7 +28,7 @@ export default function App({ toc, content }: Props) {
         <link rel="stylesheet" href="/public/style.css" />
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.css"
         />
         <link
           rel="stylesheet"
