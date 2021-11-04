@@ -9,17 +9,26 @@ async function fetchRepo(pathname: string) {
   const repo = "denocn/deno_docs";
   const branch = "main";
   const url = `https://raw.githubusercontent.com/${repo}/${branch}${pathname}`;
+  // const url = `https://cdn.jsdelivr.net/gh/${repo}/${pathname}`;
   return fetch(url);
 }
 
 const contentTypes: Record<string, string> = {
   css: "text/css",
   svg: "image/svg+xml",
-  ico: "image/x-icon",
 };
 
 async function handleRequest(request: Request) {
   const { pathname } = new URL(request.url);
+
+  if (pathname === "/favicon.ico") {
+    const file = await Deno.readFile("public/favicon.ico");
+    return new Response(file, {
+      headers: {
+        "content-type": "image/x-icon",
+      },
+    });
+  }
 
   // FIXME(justjavac): create a home page
   if (pathname === "" || pathname === "/") {

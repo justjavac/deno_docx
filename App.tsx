@@ -20,25 +20,7 @@ export default function App({ toc, content }: Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>{page.title}</title>
-        <link
-          rel="shortcut icon"
-          href="/public/favicon.ico"
-          type="image/x-icon"
-        />
         <link rel="stylesheet" href="/public/style.css" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/highlightjs/styles/github.css"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/highlightjs/highlight.pack.min.js">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js">
-        </script>
-        <script>hljs.highlightAll();anchors.add();</script>
       </head>
       <body>
         <Header />

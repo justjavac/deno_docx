@@ -1,5 +1,6 @@
 import marked from "https://esm.sh/marked";
 import type { MarkedExtension } from "https://esm.sh/marked";
+import hljs from "https://esm.sh/highlight.js";
 
 const headingIdRegex = /(?: +|^)\{#([a-z][\w-]*)\}(?: +|$)/i;
 
@@ -31,6 +32,14 @@ const plugin: MarkedExtension = {
 };
 
 marked.use(plugin);
+
+marked.setOptions({
+  highlight(code, lang) {
+    const language = hljs.getLanguage(lang) ? lang : "plaintext";
+    return hljs.highlight(code, { language }).value;
+  },
+  langPrefix: "hljs language-",
+});
 
 function isExternal(url: string | null) {
   if (url == null) return false;
