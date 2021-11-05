@@ -1,6 +1,6 @@
 /** @jsx h */
-import { h } from "https://esm.sh/preact";
-import render from "https://esm.sh/preact-render-to-string";
+import { h } from "https://esm.sh/preact@10";
+import render from "https://esm.sh/preact-render-to-string@5";
 
 import App from "./App.tsx";
 
@@ -32,7 +32,7 @@ async function handleRequest(request: Request) {
 
   // FIXME(justjavac): create a home page
   if (pathname === "" || pathname === "/") {
-    return Response.redirect("https://docx.deno.dev/introduction", 302);
+    return Response.redirect(new URL("/introduction", request.url), 302);
   }
 
   if (pathname.startsWith("/public/")) {
