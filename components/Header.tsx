@@ -7,7 +7,7 @@ export default function Header() {
       <ul>
         <li>
           <h1>
-            <a rel="nav" href="/introduction">
+            <a rel="nav" href="/introduction" aria-label="Deno logo">
               <svg
                 className="logo"
                 width="813.15"
@@ -39,6 +39,7 @@ export default function Header() {
             href="https://github.com/justjavac/deno_docx"
             target="_blank"
             rel="nofollow noopener"
+            aria-label="GitHub Repo"
           >
             <svg
               className="github-icon"
