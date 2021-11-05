@@ -1,15 +1,16 @@
 /** @jsx h */
 import { h } from "https://esm.sh/preact@10";
 import render from "https://esm.sh/preact-render-to-string@5";
+import type { Toc } from "./components/Sidebar.tsx";
 
 import App from "./App.tsx";
 
-async function fetchRepo(pathname: string) {
+export async function fetchRepo(pathname: string) {
   // const repo = "denoland/manual";
   const repo = "denocn/deno_docs";
   const branch = "main";
-  const url = `https://raw.githubusercontent.com/${repo}/${branch}${pathname}`;
-  // const url = `https://cdn.jsdelivr.net/gh/${repo}/${pathname}`;
+  // const url = `https://raw.githubusercontent.com/${repo}/${branch}${pathname}`;
+  const url = `https://cdn.jsdelivr.net/gh/${repo}/${pathname}`;
   return fetch(url);
 }
 
@@ -53,11 +54,19 @@ async function handleRequest(request: Request) {
     return fetchRepo(pathname);
   }
 
-  const toc = await (await fetchRepo("/toc.json")).json();
+  const toc: Toc = await (await fetchRepo("/toc.json")).json();
   const content = await (await fetchRepo(`${pathname}.md`)).text();
 
   return new Response(
-    `<!DOCTYPE html>${render(<App toc={toc} content={content} />)}`,
+    `<!DOCTYPE html>${
+      render(
+        <App
+          toc={toc}
+          content={content}
+          github="https://github.com/justjavac/deno_docx"
+        />,
+      )
+    }`,
     {
       headers: {
         "content-type": "text/html; charset=utf-8",

@@ -1,7 +1,7 @@
 /** @jsx h */
 import { h } from "https://esm.sh/preact@10";
 
-export default function Header() {
+export default function Header({ github }: { github: string }) {
   return (
     <header>
       <ul>
@@ -36,7 +36,7 @@ export default function Header() {
         </li>
         <li>
           <a
-            href="https://github.com/justjavac/deno_docx"
+            href={github}
             target="_blank"
             rel="nofollow noopener"
             aria-label="GitHub Repo"

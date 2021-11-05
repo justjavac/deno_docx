@@ -9,9 +9,10 @@ import parseMarkdown from "./lib/parse_markdown.ts";
 interface Props {
   toc: Toc;
   content: string;
+  github: string;
 }
 
-export default function App({ toc, content }: Props) {
+export default function App({ toc, content, github }: Props) {
   const page = parseMarkdown(content);
 
   return (
@@ -40,7 +41,7 @@ export default function App({ toc, content }: Props) {
         />
       </head>
       <body>
-        <Header />
+        <Header github={github} />
         <section>
           <Sidebar toc={toc} />
           <Markdown content={page.content} />
