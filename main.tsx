@@ -31,11 +31,7 @@ async function handleRequest(request: Request) {
   }
 
   if (pathname === "/robots.txt") {
-    return new Response("User-agent: *\nAllow: /", {
-      // headers: {
-      //   "content-type": "image/x-icon",
-      // },
-    });
+    return new Response("User-agent: *\nAllow: /");
   }
 
   // FIXME(justjavac): create a home page
