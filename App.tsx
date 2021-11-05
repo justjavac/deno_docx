@@ -38,12 +38,6 @@ export default function App({ toc, content }: Props) {
           as="style"
           onload="this.onload=null;this.rel='stylesheet'"
         />
-        <script
-          // type="module"
-          src="https://cdn.jsdelivr.net/npm/quicklink@2/dist/quicklink.umd.js"
-        >
-          quicklink.listen()
-        </script>
       </head>
       <body>
         <Header />

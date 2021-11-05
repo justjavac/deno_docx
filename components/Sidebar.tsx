@@ -21,7 +21,7 @@ export default function Sidebar({ toc }: SidebarProps) {
             return (
               <Fragment key={path}>
                 <li>
-                  <a rel="nav" href={`/${path}`}>
+                  <a rel="nav preload" href={`/${path}`}>
                     {name}
                   </a>
                 </li>
@@ -29,7 +29,7 @@ export default function Sidebar({ toc }: SidebarProps) {
                   [subPath, subName],
                 ) => (
                   <li className="indent" key={`${path}-${subPath}`}>
-                    <a rel="nav" href={`/${path}/${subPath}`}>
+                    <a rel="nav preload" href={`/${path}/${subPath}`}>
                       {subName}
                     </a>
                   </li>
