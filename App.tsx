@@ -20,6 +20,11 @@ export default function App({ toc, content }: Props) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>{page.title}</title>
+        <meta name="keyword" content="deno, doc, docs, manual, 文档, 手册" />
+        <meta
+          name="description"
+          content="Deno 是一个 JavaScript/TypeScript 的运行时，默认使用安全环境执行代码，有着卓越的开发体验。Deno 建立在 V8、Rust 和 Tokio 的基础上。"
+        />
         <link rel="stylesheet" href="/public/style.css" />
       </head>
       <body>
