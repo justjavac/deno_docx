@@ -30,6 +30,14 @@ async function handleRequest(request: Request) {
     });
   }
 
+  if (pathname === "/robots.txt") {
+    return new Response("User-agent: *\nAllow: /", {
+      // headers: {
+      //   "content-type": "image/x-icon",
+      // },
+    });
+  }
+
   // FIXME(justjavac): create a home page
   if (pathname === "" || pathname === "/") {
     return Response.redirect(new URL("/introduction", request.url), 302);
