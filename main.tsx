@@ -4,7 +4,8 @@
 /// <reference lib="dom.asynciterable" />
 /// <reference lib="deno.ns" />
 
-import { h, renderSSR, serve } from "./deps.ts";
+import { serve } from "https://deno.land/std@0.114.0/http/server.ts";
+import { h, renderSSR } from "./deps.ts";
 
 import App from "./App.tsx";
 import type { Toc } from "./components/Sidebar.tsx";
@@ -68,6 +69,7 @@ async function handler(request: Request) {
       github="https://github.com/justjavac/deno_docx"
     />,
   );
+
   return new Response(html, {
     headers: {
       "content-type": "text/html; charset=utf-8",
@@ -75,5 +77,5 @@ async function handler(request: Request) {
   });
 }
 
-console.log("Listening on http://localhost:8000");
 serve(handler);
+console.log("Listening on http://localhost:8000");

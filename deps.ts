@@ -1,8 +1,5 @@
 export { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 
-// WASM bindings to the comrak markdown rendering library
-export * as comrak from "https://deno.land/x/comrak@0.1.1/mod.ts";
-
 // Used when overriding proxies content types when serving up static content
 export { lookup } from "https://deno.land/x/media_types@v2.11.0/mod.ts";
 
