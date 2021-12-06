@@ -4,7 +4,7 @@ const headingIdRegex = /(?: +|^)\{#([a-z][\w-]*)\}(?: +|$)/i;
 
 const plugin = {
   renderer: {
-    heading(text, level) {
+    heading(text: string, level: number) {
       const hasId = text.match(headingIdRegex);
       if (!hasId) {
         return false;
@@ -13,7 +13,7 @@ const plugin = {
         text.replace(headingIdRegex, "")
       }</h${level}>\n`;
     },
-    link(href, title, text) {
+    link(href: string, title: string, text: string) {
       const a = [
         `<a href="${
           isMarkdown(href) ? href?.replace(/\.md$/, "") : href ?? "#"
