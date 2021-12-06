@@ -1,9 +1,8 @@
 import { hljs, marked } from "../deps.ts";
-import type { MarkedExtension } from "../deps.ts";
 
 const headingIdRegex = /(?: +|^)\{#([a-z][\w-]*)\}(?: +|$)/i;
 
-const plugin: MarkedExtension = {
+const plugin = {
   renderer: {
     heading(text, level) {
       const hasId = text.match(headingIdRegex);

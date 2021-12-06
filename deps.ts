@@ -15,4 +15,3 @@ export { renderSSR } from "https://deno.land/x/nano_jsx@v0.0.25/ssr.ts";
 export { default as hljs } from "https://cdn.skypack.dev/highlight.js@11.3.1?dts";
 
 export { marked } from "https://cdn.skypack.dev/marked@4?dts";
-export type { MarkedExtension } from "https://cdn.skypack.dev/marked@4?dts";
