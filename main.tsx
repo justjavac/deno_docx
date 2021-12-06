@@ -1,11 +1,15 @@
 /** @jsx h */
-import { h } from "https://esm.sh/preact@10";
-import render from "https://esm.sh/preact-render-to-string@5";
-import type { Toc } from "./components/Sidebar.tsx";
+/// <reference no-default-lib="true"/>
+/// <reference lib="dom" />
+/// <reference lib="dom.asynciterable" />
+/// <reference lib="deno.ns" />
+
+import { h, renderSSR, serve } from "./deps.ts";
 
 import App from "./App.tsx";
+import type { Toc } from "./components/Sidebar.tsx";
 
-export async function fetchRepo(pathname: string) {
+export function fetchRepo(pathname: string) {
   // const repo = "denoland/manual";
   const repo = "denocn/deno_docs";
   const branch = "main";
@@ -19,7 +23,7 @@ const contentTypes: Record<string, string> = {
   svg: "image/svg+xml",
 };
 
-async function handleRequest(request: Request) {
+async function handler(request: Request) {
   const { pathname } = new URL(request.url);
 
   if (pathname === "/favicon.ico") {
@@ -57,24 +61,19 @@ async function handleRequest(request: Request) {
   const toc: Toc = await (await fetchRepo("/toc.json")).json();
   const content = await (await fetchRepo(`${pathname}.md`)).text();
 
-  return new Response(
-    `<!DOCTYPE html>${
-      render(
-        <App
-          toc={toc}
-          content={content}
-          github="https://github.com/justjavac/deno_docx"
-        />,
-      )
-    }`,
-    {
-      headers: {
-        "content-type": "text/html; charset=utf-8",
-      },
-    },
+  const html = renderSSR(
+    <App
+      toc={toc}
+      content={content}
+      github="https://github.com/justjavac/deno_docx"
+    />,
   );
+  return new Response(html, {
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+    },
+  });
 }
 
-addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
-});
+console.log("Listening on http://localhost:8000");
+serve(handler);

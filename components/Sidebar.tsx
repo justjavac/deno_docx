@@ -1,5 +1,5 @@
 /** @jsx h */
-import { Fragment, h } from "https://esm.sh/preact@10";
+import { Fragment, h } from "../deps.ts";
 
 export interface Toc {
   [key: string]: {

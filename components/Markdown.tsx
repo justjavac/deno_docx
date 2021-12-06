@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h } from "https://esm.sh/preact@10";
+import { h } from "../deps.ts";
 
 interface Props {
   content: string;

@@ -1,5 +1,5 @@
 /** @jsx h */
-import { h } from "https://esm.sh/preact@10";
+import { h } from "../deps.ts";
 
 export default function Header({ github }: { github: string }) {
   return (

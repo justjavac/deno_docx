@@ -1,6 +1,5 @@
-import { marked } from "https://esm.sh/marked@4";
-import type { MarkedExtension } from "https://esm.sh/marked@4";
-import hljs from "https://esm.sh/highlight.js@11";
+import { hljs, marked } from "../deps.ts";
+import type { MarkedExtension } from "../deps.ts";
 
 const headingIdRegex = /(?: +|^)\{#([a-z][\w-]*)\}(?: +|$)/i;
 
