@@ -25,12 +25,12 @@ export default function Header({ github }: { github: string }) {
         </li>
         <li class="space"></li>
         <li>
-          <a href="https://x.deno.js.cn" target="_blank" rel="friend noopener">
+          <a href="https://x.deno.js.cn" target="_blank" rel="friend noopener noreferrer">
             安装
           </a>
         </li>
         <li>
-          <a href="http://deno.js.cn" target="_blank" rel="friend noopener">
+          <a href="http://deno.js.cn" target="_blank" rel="friend noopener noreferrer">
             社区
           </a>
         </li>
@@ -38,7 +38,7 @@ export default function Header({ github }: { github: string }) {
           <a
             href={github}
             target="_blank"
-            rel="nofollow noopener"
+            rel="nofollow noopener noreferrer"
             aria-label="GitHub Repo"
           >
             <svg
