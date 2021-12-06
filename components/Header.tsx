@@ -9,7 +9,7 @@ export default function Header({ github }: { github: string }) {
           <h1>
             <a rel="nav" href="/introduction" aria-label="Deno logo">
               <svg
-                className="logo"
+                class="logo"
                 width="813.15"
                 height="813.184"
                 viewBox="0 0 813.15 813.184"
@@ -23,7 +23,7 @@ export default function Header({ github }: { github: string }) {
             </a>
           </h1>
         </li>
-        <li className="space"></li>
+        <li class="space"></li>
         <li>
           <a href="https://x.deno.js.cn" target="_blank" rel="friend noopener">
             安装
@@ -42,7 +42,7 @@ export default function Header({ github }: { github: string }) {
             aria-label="GitHub Repo"
           >
             <svg
-              className="github-icon"
+              class="github-icon"
               width="20px"
               height="20px"
               viewBox="0 0 16 16"

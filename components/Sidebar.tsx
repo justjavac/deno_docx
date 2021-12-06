@@ -28,7 +28,7 @@ export default function Sidebar({ toc }: SidebarProps) {
                 {Object.entries(children).map((
                   [subPath, subName],
                 ) => (
-                  <li className="indent" key={`${path}-${subPath}`}>
+                  <li class="indent" key={`${path}-${subPath}`}>
                     <a rel="nav preload" href={`/${path}/${subPath}`}>
                       {subName}
                     </a>

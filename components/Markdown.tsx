@@ -8,7 +8,7 @@ interface Props {
 export default function Markdown({ content }: Props) {
   return (
     <article
-      className="markdown-body"
+      class="markdown-body"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );
