@@ -148,7 +148,7 @@ section {
 .markdown-body {
   width: 75%;
   min-height: calc(100vh - var(--header-height) - 6rem);
-  padding: 3rem;
+  padding: 16px 32px 32px;
 }
 
 .markdown-body pre code.hljs {
