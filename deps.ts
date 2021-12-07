@@ -4,10 +4,10 @@ export { serve } from "https://deno.land/std@0.114.0/http/server.ts";
 export { lookup } from "https://deno.land/x/media_types@v2.11.0/mod.ts";
 
 // Importing the parts of NanoJSX which we are using in the application.
-export { Helmet } from "https://deno.land/x/nano_jsx@v0.0.25/components/helmet.ts";
-export { h } from "https://deno.land/x/nano_jsx@v0.0.25/core.ts";
-export { Fragment } from "https://deno.land/x/nano_jsx@v0.0.25/fragment.ts";
-export { renderSSR } from "https://deno.land/x/nano_jsx@v0.0.25/ssr.ts";
+export { Helmet } from "https://deno.land/x/nano_jsx@v0.0.26/components/helmet.ts";
+export { h } from "https://deno.land/x/nano_jsx@v0.0.26/core.ts";
+export { Fragment } from "https://deno.land/x/nano_jsx@v0.0.26/fragment.ts";
+export { renderSSR } from "https://deno.land/x/nano_jsx@v0.0.26/ssr.ts";
 
 export { default as hljs } from "https://cdn.skypack.dev/highlight.js@11.3.1?dts";
 
