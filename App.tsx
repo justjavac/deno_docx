@@ -28,10 +28,8 @@ export default function App({ toc, content, github }: Props) {
         />
         <link rel="stylesheet" href="/public/style.css" />
         <link
-          rel="preload"
+          rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css"
-          as="style"
-          onload="this.onload=null;this.rel='stylesheet'"
         />
         <link
           rel="preload"
