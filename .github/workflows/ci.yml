@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  format:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -18,3 +18,6 @@ jobs:
 
       - name: Format
         run: deno fmt --check
+
+      - name: Lint
+        run: deno lint
