@@ -27,16 +27,6 @@ export default function App({ toc, content, github }: Props) {
           content="Deno 是一个 JavaScript/TypeScript 的运行时，默认使用安全环境执行代码，有着卓越的开发体验。Deno 建立在 V8、Rust 和 Tokio 的基础上。"
         />
         <link rel="stylesheet" href="/public/style.css" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown-light.min.css"
-        />
-        <link
-          rel="preload"
-          href="https://cdn.jsdelivr.net/npm/highlightjs/styles/github.min.css"
-          as="style"
-          onload="this.onload=null;this.rel='stylesheet'"
-        />
       </head>
       <body>
         <Header github={github} />
