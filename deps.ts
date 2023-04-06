@@ -9,6 +9,6 @@ export { h } from "https://deno.land/x/nano_jsx@v0.0.26/core.ts";
 export { Fragment } from "https://deno.land/x/nano_jsx@v0.0.26/fragment.ts";
 export { renderSSR } from "https://deno.land/x/nano_jsx@v0.0.26/ssr.ts";
 
-export { default as hljs } from "https://cdn.skypack.dev/highlight.js@11.3.1?dts";
+export { default as hljs } from "https://esm.sh/highlight.js@11.3.1";
 
-export { marked } from "https://cdn.skypack.dev/marked@4?dts";
+export { marked } from "https://esm.sh/marked@4.3.0";
